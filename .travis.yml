@@ -1,0 +1,13 @@
+language: minimal
+services:
+- docker
+addons:
+  apt:
+    update: true
+    packages:
+    - ca-certificates
+    - make
+before_script:
+- make builder
+script:
+- make images
