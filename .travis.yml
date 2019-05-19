@@ -7,7 +7,5 @@ addons:
     packages:
     - ca-certificates
     - make
-before_script:
-- make builder
 script:
-- make images
+- make builder SKIP_BUILD_IMAGE=y
