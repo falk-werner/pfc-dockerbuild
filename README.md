@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/falk-werner/pfc-dockerbuild.svg?branch=master)](https://travis-ci.org/falk-werner/pfc-dockerbuild)
+
 # pfc-dockerbuild
 
 Provides a docker file to create PFC firmware images.  
