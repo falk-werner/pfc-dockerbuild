@@ -62,12 +62,12 @@ RUN set -x \
 ARG TOOLCHAIN_DIR=/opt/LINARO.Toolchain-2017.10
 RUN set -x \
   && mkdir -p /opt/LINARO.Toolchain-2017.10/ \
-  && git clone http://www.github.com/wago/gcc-linaro.toolchain-2017-precompiled.git /opt/LINARO.Toolchain-2017.10/ 
+  && git clone --depth=1 http://www.github.com/wago/gcc-linaro.toolchain-2017-precompiled.git /opt/LINARO.Toolchain-2017.10/ 
 
 RUN set -x \
   && mkdir -p "${BUILD_DIR}" \
   && cd "${BUILD_DIR}" \
-  && git clone http://github.com/wago/ptxdist.git "${BUILD_DIR}" \
+  && git clone --depth=1 http://github.com/wago/ptxdist.git "${BUILD_DIR}" \
   && ./configure \
   && make \
   && make install \
@@ -78,13 +78,11 @@ ARG USERID=1000
 RUN set -x \
     && useradd -u "$USERID" -ms /bin/bash user
 
-ARG PFC_SDK_BRANCH=master
 ARG PTXPROJ_DIR=/home/user/ptxproj
 RUN set -x \
   && mkdir -p "${PTXPROJ_DIR}" \
   && cd "${PTXPROJ_DIR}" \
-  && git clone https://github.com/WAGO/pfc-firmware-sdk.git . \
-  && git checkout "${PFC_SDK_BRANCH}" \
+  && git clone --depth=1 https://github.com/WAGO/pfc-firmware-sdk.git . \
   && chown -R user:user "${PTXPROJ_DIR}"
 
 RUN set -x \
