@@ -8,7 +8,7 @@ Please refer to [https://github.com/WAGO/pfc-firmware-sdk](https://github.com/WA
 ## Prerequisites
 
 Make sure that docker and make are installed on the host system.  
-Tho install docker, please refer to the instructions depending on your host system, e.g for Ubuntu use [https://docs.docker.com/install/linux/docker-ce/ubuntu/](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
+To install docker, please refer to the instructions depending on your host system, e.g for Ubuntu use [https://docs.docker.com/install/linux/docker-ce/ubuntu/](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 
 To install make, you can use apt:
 
