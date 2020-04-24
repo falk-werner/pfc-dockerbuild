@@ -31,7 +31,8 @@ RUN set -x \
         git \
         software-properties-common \
         bc \
-        groff
+        groff \
+	zip
 
 RUN set -x \
   && add-apt-repository ppa:git-core/ppa \
@@ -95,6 +96,7 @@ RUN if [ "_${SKIP_BUILD_IMAGE}" = "_" ] ; then \
     set -x \
       && su - user -c "cd \"${PTXPROJ_DIR}\" && ptxdist go -q --j-intern=`nproc`" \
       && su - user -c "cd \"${PTXPROJ_DIR}\" && ptxdist images -q --j-intern=`nproc`" \
+      && su - user -c "cd \"${PTXPROJ_DIR}\" && make wup" \
     ; fi
 
 WORKDIR "${PTXPROJ_DIR}"
